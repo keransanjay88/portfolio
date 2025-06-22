@@ -306,7 +306,7 @@ export default function Home() {
             variants={itemVariants}
             className="text-4xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent"
           >
-            Hi, I'm <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Keran Sanjay</span>
+            Hi, I&apos;m <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Keran Sanjay</span>
           </motion.h1>
 
           <motion.p
@@ -366,10 +366,10 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-white mb-6">My Story</h3>
                 <p className="text-white/80 mb-6 leading-relaxed">
                   I am a Computer and Communication Engineering graduate from Sri Eshwar College of Engineering with a CGPA of 8.0. 
-                  I'm passionate about creating innovative solutions that bridge technology and real-world problems.
+                  I&apos;m passionate about creating innovative solutions that bridge technology and real-world problems.
                 </p>
                 <p className="text-white/80 leading-relaxed">
-                  I'm seeking challenging opportunities where I can leverage my skills, expand my expertise, 
+                  I&apos;m seeking challenging opportunities where I can leverage my skills, expand my expertise, 
                   and contribute meaningfully to organizational growth in a dynamic environment that fosters continuous learning.
                 </p>
               </div>
@@ -570,7 +570,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-white/80 text-center mb-16 max-w-2xl mx-auto"
           >
-            I'm always interested in new opportunities and exciting projects. Let's connect and create something amazing together!
+            I&apos;m always interested in new opportunities and exciting projects. Let&apos;s connect and create something amazing together!
           </motion.p>
 
           <div className="grid md:grid-cols-3 gap-8">
