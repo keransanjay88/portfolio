@@ -40,21 +40,21 @@ const ScrollToTopButton = () => {
         scale: isVisible ? 1 : 0
       }}
       transition={{ duration: 0.3 }}
-      className="fixed bottom-8 right-8 z-40"
+      className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-40"
       style={{ pointerEvents: isVisible ? 'auto' : 'none' }}
     >
       <motion.button
         onClick={scrollToTop}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-lg"
+        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300"
       >
         {/* Gradient background contained within button boundaries */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
         
         {/* Arrow icon on top */}
         <svg 
-          className="w-6 h-6 text-white relative z-10" 
+          className="w-5 h-5 sm:w-6 sm:h-6 text-white relative z-10" 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
