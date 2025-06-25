@@ -181,7 +181,7 @@ const ProjectsSection = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Freelancing Projects Coming Soon</h3>
                 <p className="text-white/60 max-w-md mx-auto">
-                  I'll be adding my freelancing projects here soon. Check back later to see my client work and collaborations!
+                  I&apos;ll be adding my freelancing projects here soon. Check back later to see my client work and collaborations!
                 </p>
               </motion.div>
             </div>
