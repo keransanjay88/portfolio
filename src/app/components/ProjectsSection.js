@@ -45,8 +45,8 @@ const ProjectsSection = () => {
   ]
 
   const tabs = [
-    { id: 'personal', label: 'Personal Projects', count: personalProjects.length },
-    { id: 'freelancing', label: 'Freelancing', count: freelancingProjects.length }
+    { id: 'personal', label: 'Personal Projects', shortLabel: 'Personal', count: personalProjects.length },
+    { id: 'freelancing', label: 'Freelancing', shortLabel: 'Freelancing', count: freelancingProjects.length }
   ]
 
   const currentProjects = activeTab === 'personal' ? personalProjects : freelancingProjects
@@ -63,36 +63,35 @@ const ProjectsSection = () => {
           My <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Projects</span>
         </motion.h2>
 
-        {/* Tab Navigation */}
+        {/* Tab Navigation - Mobile Responsive */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-12 px-2"
         >
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-2 border border-white/10">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                    : 'text-white/70 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {tab.label}
-                {tab.count > 0 && (
-                  <span className={`ml-2 px-2 py-1 rounded-full text-xs ${
+          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-2 border border-white/10 w-full max-w-md sm:max-w-lg">
+            <div className="flex w-full">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex-1 px-3 sm:px-6 py-2 rounded-xl font-semibold transition-all duration-300 text-center ${
                     activeTab === tab.id
-                      ? 'bg-white/20'
-                      : 'bg-white/10'
-                  }`}>
-                    {tab.count}
+                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                      : 'text-white/70 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {/* Show short label on mobile, full label on larger screens */}
+                  <span className="block sm:hidden text-sm">
+                    {tab.shortLabel}
                   </span>
-                )}
-              </button>
-            ))}
+                  <span className="hidden sm:block">
+                    {tab.label}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -166,24 +165,15 @@ const ProjectsSection = () => {
               ))}
             </div>
           ) : (
-            // Empty state for freelancing projects
-            <div className="flex flex-col items-center justify-center py-20">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="text-center"
-              >
-                <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center border border-white/10">
-                  <svg className="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Freelancing Projects Coming Soon</h3>
-                <p className="text-white/60 max-w-md mx-auto">
-                  I&apos;ll be adding my freelancing projects here soon. Check back later to see my client work and collaborations!
-                </p>
-              </motion.div>
+            <div className="text-center py-20">
+              <div className="text-6xl mb-4">🚀</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Coming Soon</h3>
+              <p className="text-white/60 max-w-md mx-auto">
+                {activeTab === 'freelancing' 
+                  ? "I&apos;m currently working on exciting freelancing projects. Check back soon to see what I&apos;ve been building!"
+                  : "New projects are in development. Stay tuned for updates!"
+                }
+              </p>
             </div>
           )}
         </motion.div>
