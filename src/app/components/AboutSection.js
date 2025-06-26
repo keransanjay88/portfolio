@@ -3,171 +3,170 @@ import { motion } from 'framer-motion'
 
 const AboutSection = () => {
   const skills = [
-    { name: "Java", level: 85, icon: "☕" },
-    { name: "JavaScript", level: 80, icon: "🚀" },
-    { name: "Python", level: 75, icon: "🐍" },
-    { name: "Flutter", level: 70, icon: "📱" },
-    { name: "HTML/CSS", level: 90, icon: "🎨" },
-    { name: "SQL", level: 75, icon: "🗃️" },
-    { name: "Machine Learning", level: 65, icon: "🤖" },
-    { name: "Git", level: 80, icon: "🔧" }
-  ]
-
-  const education = [
-    {
-      degree: "Computer and Communication Engineering",
-      school: "Sri Eshwar College of Engineering",
-      year: "2020 - 2024",
-      grade: "CGPA: 8.0",
-      icon: "🎓"
+    { 
+      name: "Java", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+      gradient: "from-orange-500 to-red-500"
     },
-    {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Rajalakshmi Gengusamy Matric Higher Secondary School",
-      year: "2019 - 2020",
-      grade: "73.67%",
-      icon: "📚"
+    { 
+      name: "JavaScript", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+      gradient: "from-yellow-500 to-orange-500"
+    },
+    { 
+      name: "Python", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+      gradient: "from-blue-500 to-green-500"
+    },
+    { 
+      name: "Flutter", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
+      gradient: "from-blue-500 to-cyan-500"
+    },
+    { 
+      name: "HTML5", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+      gradient: "from-orange-500 to-red-500"
+    },
+    { 
+      name: "CSS3", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+      gradient: "from-blue-500 to-purple-500"
+    },
+    { 
+      name: "SQL", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+      gradient: "from-indigo-500 to-blue-500"
+    },
+    { 
+      name: "Git", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+      gradient: "from-orange-500 to-red-500"
+    },
+    { 
+      name: "React", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+      gradient: "from-blue-400 to-cyan-400"
+    },
+    { 
+      name: "Node.js", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+      gradient: "from-green-500 to-green-600"
+    },
+    { 
+      name: "MongoDB", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+      gradient: "from-green-500 to-green-700"
+    },
+    { 
+      name: "TensorFlow", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
+      gradient: "from-orange-500 to-yellow-500"
     }
   ]
 
-  const certifications = [
-    { name: "Basic SQL - HackerRank", icon: "🏆" },
-    { name: "Microsoft Student Ambassador Bootcamp", icon: "🥇" },
-    { name: "Google Developer Certification for Hotstar Clone", icon: "🌟" }
-  ]
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.9
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
 
   return (
     <section id="about" className="pt-8 pb-20 sm:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center text-white mb-16"
+          className="text-4xl md:text-5xl font-bold text-center text-white mb-6"
         >
-          About <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Me</span>
+          My <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Skills</span>
         </motion.h2>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left Column - Story & Education */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">My Story</h3>
-              <p className="text-white/80 mb-6 leading-relaxed">
-                I am a Computer and Communication Engineering graduate from Sri Eshwar College of Engineering with a CGPA of 8.0. 
-                I&apos;m passionate about creating innovative solutions that bridge technology and real-world problems.
-              </p>
-              <p className="text-white/80 leading-relaxed">
-                I&apos;m seeking challenging opportunities where I can leverage my skills, expand my expertise, 
-                and contribute meaningfully to organizational growth in a dynamic environment that fosters continuous learning.
-              </p>
-            </div>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center text-white/70 text-lg mb-16 max-w-3xl mx-auto"
+        >
+          Technologies and tools I use to bring ideas to life
+        </motion.p>
 
-            {/* Education */}
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">Education</h3>
-              <div className="space-y-6">
-                {education.map((edu, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start space-x-4 p-4 rounded-lg bg-white/5 border border-white/10"
-                  >
-                    <span className="text-2xl">{edu.icon}</span>
-                    <div>
-                      <h4 className="font-semibold text-white">{edu.degree}</h4>
-                      <p className="text-purple-300">{edu.school}</p>
-                      <p className="text-sm text-white/60">{edu.year} • {edu.grade}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Award */}
+        {/* Skills Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+        >
+          {skills.map((skill, index) => (
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-md rounded-2xl p-6 border border-yellow-500/30"
+              key={index}
+              variants={cardVariants}
+              whileHover={{ 
+                scale: 1.1,
+                y: -10,
+                transition: { duration: 0.3 }
+              }}
+              className="group relative"
             >
-              <div className="flex items-center space-x-3">
-                <span className="text-3xl">🏆</span>
-                <div>
-                  <h4 className="font-semibold text-white">Project Expo 2022</h4>
-                  <p className="text-yellow-300">3rd Place at Sri Eshwar College of Engineering</p>
+              {/* Skill Card */}
+              <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col items-center justify-center aspect-square">
+                {/* Gradient Background on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}></div>
+                
+                {/* Card Content */}
+                <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                  {/* Logo */}
+                  <div className="w-16 h-16 mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <img 
+                      src={skill.logo} 
+                      alt={`${skill.name} logo`}
+                      className="w-full h-full object-contain filter drop-shadow-lg"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback icon */}
+                    <div className={`w-16 h-16 bg-gradient-to-r ${skill.gradient} rounded-xl items-center justify-center text-white text-2xl font-bold hidden`}>
+                      {skill.name.charAt(0)}
+                    </div>
+                  </div>
+
+                  {/* Name */}
+                  <h3 className="text-white font-semibold text-center text-sm group-hover:text-white transition-colors leading-tight">
+                    {skill.name}
+                  </h3>
                 </div>
               </div>
             </motion.div>
-          </motion.div>
-
-          {/* Right Column - Skills & Certifications */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            {/* Skills */}
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">Skills</h3>
-              <div className="space-y-4">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, width: 0 }}
-                    whileInView={{ opacity: 1, width: "100%" }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="space-y-2"
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="flex items-center space-x-2 text-white">
-                        <span>{skill.icon}</span>
-                        <span>{skill.name}</span>
-                      </span>
-                      <span className="text-purple-300">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-white/10 rounded-full h-2">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ delay: index * 0.1 + 0.3, duration: 0.8 }}
-                        className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Certifications */}
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">Certifications</h3>
-              <div className="space-y-4">
-                {certifications.map((cert, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ x: 10 }}
-                    className="flex items-center space-x-3 p-3 rounded-lg bg-white/5 border border-white/10 cursor-pointer"
-                  >
-                    <span className="text-xl">{cert.icon}</span>
-                    <span className="text-white/90">{cert.name}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )

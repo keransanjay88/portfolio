@@ -6,7 +6,13 @@ const Navigation = ({ activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { scrollYProgress } = useScroll()
 
-  const navItems = ['home', 'about', 'projects', 'testimonials', 'contact']
+  const navItems = [
+    { key: 'home', label: 'Home' },
+    { key: 'about', label: 'Skills' }, // Updated from 'About' to 'Skills'
+    { key: 'projects', label: 'Projects' },
+    { key: 'testimonials', label: 'Testimonials' },
+    { key: 'contact', label: 'Contact' }
+  ]
 
   return (
     <>
@@ -37,17 +43,17 @@ const Navigation = ({ activeSection }) => {
             <div className="hidden md:flex space-x-8">
               {navItems.map((item) => (
                 <motion.a
-                  key={item}
-                  href={`#${item}`}
+                  key={item.key}
+                  href={`#${item.key}`}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`capitalize transition-colors duration-300 ${
-                    activeSection === item
-                      ? 'text-purple-400 font-semibold'
+                  className={`transition-colors duration-300 ${
+                    activeSection === item.key
+                      ? 'text-white font-bold'
                       : 'text-white/70 hover:text-white'
                   }`}
                 >
-                  {item}
+                  {item.label}
                 </motion.a>
               ))}
             </div>
@@ -94,17 +100,17 @@ const Navigation = ({ activeSection }) => {
               >
                 {navItems.map((item) => (
                   <motion.a
-                    key={item}
-                    href={`#${item}`}
+                    key={item.key}
+                    href={`#${item.key}`}
                     whileHover={{ x: 10 }}
-                    className={`block py-3 px-4 text-white/70 hover:text-white capitalize transition-colors duration-300 ${
-                      activeSection === item
-                        ? 'text-purple-400 font-semibold bg-white/5 rounded-lg mx-2'
+                    className={`block py-3 px-4 text-white/70 hover:text-white transition-colors duration-300 ${
+                      activeSection === item.key
+                        ? 'text-white font-bold bg-white/10 rounded-lg mx-2'
                         : ''
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {item}
+                    {item.label}
                   </motion.a>
                 ))}
               </motion.div>
