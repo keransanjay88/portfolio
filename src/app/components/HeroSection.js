@@ -5,6 +5,12 @@ const HeroSection = () => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
 
+  // Image positioning and zoom values - modify these to adjust the image
+  const imageZoom = 2.1        // Change this value (0.5 to 3) to zoom in/out
+  const imagePositionX = 4.5     // Change this value (-50 to 50) to move left/right
+  const imagePositionY = 45  // Change this value (-50 to 50) to move up/down
+  const imageRotation = -2      // Change this value (-180 to 180) to rotate the image
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -52,9 +58,25 @@ const HeroSection = () => {
             <motion.img
               src="/profile.jpg"
               alt="Profile"
-              className="absolute w-full h-full object-cover"
-              style={{ transform: 'translateX(0.5px) translateY(0px)' }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              className="absolute w-full h-full object-contain"
+              initial={{
+                scale: imageZoom,
+                x: imagePositionX,
+                y: imagePositionY,
+                rotate: imageRotation
+              }}
+              animate={{
+                scale: imageZoom,
+                x: imagePositionX,
+                y: imagePositionY,
+                rotate: imageRotation
+              }}
+              whileHover={{ 
+                scale: imageZoom * 1.1, 
+                rotate: imageRotation + 5,
+                x: imagePositionX,
+                y: imagePositionY
+              }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
           </div>
