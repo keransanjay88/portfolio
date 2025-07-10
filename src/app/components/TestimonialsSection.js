@@ -5,17 +5,17 @@ import { useState, useEffect } from 'react'
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Dr. Rajesh Kumar",
-      role: "Professor, Sri Eshwar College of Engineering",
+      name: "Ravi | Portfolio Auditor",
+      role: "Founder & Business Owner",
       image: "/api/placeholder/80/80",
-      quote: "Keran demonstrated exceptional skills in machine learning and software development. His project on sleep quality prediction showed remarkable innovation and technical depth.",
+      quote: "Keran and his team made my first business website journey smooth and rewarding. They understood every requirement, offered great suggestions, and delivered with technical clarity. From choosing the right tech stack to setting up deployment on Render and AWS, everything was handled professionally. They even added features like live chat and supported extra requirements without hesitation. Their transparency, patience, and willingness to go the extra mile truly stood out. I’m grateful and will definitely work with them again.",
       rating: 5
     },
     {
-      name: "Priya Sharma",
-      role: "Project Team Member",
+      name: "Ayush | Ciffly",
+      role: "Founder & Business Owner",
       image: "/api/placeholder/80/80",
-      quote: "Working with Keran on our final year project was inspiring. His dedication to problem-solving and attention to detail made our chatbot project a huge success.",
+      quote: "It was a great experience working with Keran and his team. They delivered high-quality work in redesigning over 14 dashboard screens, making them significantly more attractive and fully responsive across devices. Their expertise in Figma, frontend development using Tailwind CSS, and hands-on skills with JavaScript were clearly evident throughout the project. I appreciate their attention to detail, creativity, and timely delivery. I would highly recommend them for any UI/UX and frontend development work.",
       rating: 5
     },
     {
@@ -190,11 +190,10 @@ const TestimonialsSection = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   whileHover={{ scale: 1.2 }}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500'
-                      : 'bg-white/30 hover:bg-white/50'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                    ? 'bg-gradient-to-r from-purple-500 to-pink-500'
+                    : 'bg-white/30 hover:bg-white/50'
+                    }`}
                 />
               ))}
             </div>
