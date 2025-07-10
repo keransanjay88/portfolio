@@ -19,10 +19,10 @@ const TestimonialsSection = () => {
       rating: 5
     },
     {
-      name: "Microsoft Student Ambassador",
-      role: "Bootcamp Mentor",
+      name: "Raja L",
+      role: "Professor | SECE",
       image: "/api/placeholder/80/80",
-      quote: "Keran's Hotstar clone project stood out for its responsive design and clean code implementation. He shows great potential as a full-stack developer.",
+      quote: "Your poster design is awesome and reflects your dedication and innovation. keep doing good work",
       rating: 5
     },
     {
