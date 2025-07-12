@@ -24,20 +24,6 @@ const TestimonialsSection = () => {
       image: "/api/placeholder/80/80",
       quote: "Your poster design is awesome and reflects your dedication and innovation. keep doing good work",
       rating: 5
-    },
-    {
-      name: "HackerRank Certification",
-      role: "SQL Assessment",
-      image: "/api/placeholder/80/80",
-      quote: "Successfully completed Basic SQL certification with excellent performance, demonstrating strong database management and query optimization skills.",
-      rating: 5
-    },
-    {
-      name: "GitHub Community",
-      role: "Open Source Contributor",
-      image: "/api/placeholder/80/80",
-      quote: "Keran's repositories show clean code practices and well-documented projects. His Flutter TODO app with automated releases is particularly impressive.",
-      rating: 5
     }
   ]
 
@@ -185,7 +171,7 @@ const TestimonialsSection = () => {
 
             {/* Dots Indicator */}
             <div className="flex space-x-2">
-              {testimonials.map((_, index) => (
+              {[0, 1, 2].map((index) => (
                 <motion.button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
