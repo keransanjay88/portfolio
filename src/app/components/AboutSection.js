@@ -40,7 +40,7 @@ const AboutSection = () => {
     },
     {
       name: "Make",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Make_logo.svg",
+      logo: "/make.png",
       gradient: "from-purple-500 to-pink-500"
     },
     {
