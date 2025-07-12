@@ -3,9 +3,8 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const ProjectsSection = () => {
-  const [activeTab, setActiveTab] = useState('personal')
-
-  const personalProjects = [
+  // Only "Works" section, no tabs
+  const works = [
     {
       title: "Voice-Enabled Chatbot",
       description: "An AI-powered voice assistant that converts speech to text, generates dynamic responses, and can open specific URLs for users.",
@@ -40,17 +39,6 @@ const ProjectsSection = () => {
     }
   ]
 
-  const freelancingProjects = [
-    // Future freelancing projects will be added here
-  ]
-
-  const tabs = [
-    { id: 'personal', label: 'Personal Projects', shortLabel: 'Personal', count: personalProjects.length },
-    { id: 'freelancing', label: 'Freelancing', shortLabel: 'Freelancing', count: freelancingProjects.length }
-  ]
-
-  const currentProjects = activeTab === 'personal' ? personalProjects : freelancingProjects
-
   return (
     <section id="projects" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,59 +48,28 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold text-center text-white mb-16"
         >
-          My <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Projects</span>
+          My <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Works</span>
         </motion.h2>
 
-        {/* Tab Navigation - Mobile Responsive */}
+        {/* Works Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center mb-12 px-2"
-        >
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-2 border border-white/10 w-full max-w-md sm:max-w-lg">
-            <div className="flex w-full">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex-1 px-3 sm:px-6 py-2 rounded-xl font-semibold transition-all duration-300 text-center ${
-                    activeTab === tab.id
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                      : 'text-white/70 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {/* Show short label on mobile, full label on larger screens */}
-                  <span className="block sm:hidden text-sm">
-                    {tab.shortLabel}
-                  </span>
-                  <span className="hidden sm:block">
-                    {tab.label}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Projects Grid */}
-        <motion.div
-          key={activeTab}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="min-h-[400px]"
         >
-          {currentProjects.length > 0 ? (
+          {works.length > 0 ? (
             <div className="grid md:grid-cols-2 gap-8">
-              {currentProjects.map((project, index) => (
+              {works.map((project, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2, duration: 0.6 }}
                   whileHover={{ y: -10 }}
-                  className="group bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300"
+
+                  className="group bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
+                  onClick={() => window.open(`/projects/${encodeURIComponent(project.title.toLowerCase().replace(/\s+/g, '-'))}`, '_self')}
                 >
                   <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
@@ -123,7 +80,7 @@ const ProjectsSection = () => {
 
                   <div className="p-6">
                     <p className="text-white/80 mb-4 leading-relaxed">{project.description}</p>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tech.map((tech, techIndex) => (
                         <span
@@ -135,31 +92,7 @@ const ProjectsSection = () => {
                       ))}
                     </div>
 
-                    <div className="flex gap-4">
-                      <motion.a
-                        href={project.github}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors"
-                      >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        <span>Code</span>
-                      </motion.a>
-                      
-                      <motion.a
-                        href={project.demo}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center space-x-2 text-pink-400 hover:text-pink-300 transition-colors"
-                      >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        <span>Demo</span>
-                      </motion.a>
-                    </div>
+                    {/* Card is now clickable for project brief */}
                   </div>
                 </motion.div>
               ))}
@@ -169,10 +102,7 @@ const ProjectsSection = () => {
               <div className="text-6xl mb-4">🚀</div>
               <h3 className="text-2xl font-bold text-white mb-4">Coming Soon</h3>
               <p className="text-white/60 max-w-md mx-auto">
-                {activeTab === 'freelancing' 
-                  ? "I&apos;m currently working on exciting freelancing projects. Check back soon to see what I&apos;ve been building!"
-                  : "New projects are in development. Stay tuned for updates!"
-                }
+                New works are in development. Stay tuned for updates!
               </p>
             </div>
           )}
