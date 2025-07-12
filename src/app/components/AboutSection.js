@@ -40,7 +40,7 @@ const AboutSection = () => {
     },
     {
       name: "Make",
-      logo: "https://cdn.make.com/wp-content/uploads/2022/11/cropped-make_logo_full_color.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Make_logo.svg",
       gradient: "from-purple-500 to-pink-500"
     },
     {
