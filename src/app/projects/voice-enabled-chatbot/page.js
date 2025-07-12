@@ -43,7 +43,7 @@ export default function VoiceEnabledChatbotPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-3 text-pink-400">Client Feedback</h2>
           <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-white/90">
-            <p className="italic">"This voice assistant made my workflow so much easier! The voice-to-action feature is super intuitive."</p>
+            <p className="italic">&quot;This voice assistant made my workflow so much easier! The voice-to-action feature is super intuitive.&quot;</p>
             <p className="mt-2 text-right text-white/60">- Client Name</p>
           </div>
         </section>
