@@ -6,12 +6,36 @@ const ProjectsSection = () => {
   // Only "Works" section, no tabs
   const works = [
     {
-      title: "Voice-Enabled Chatbot",
-      description: "An AI-powered voice assistant that converts speech to text, generates dynamic responses, and can open specific URLs for users.",
-      tech: ["JavaScript", "AI API", "Speech Recognition", "Web APIs"],
-      github: "https://github.com/keransanjay88/chatbot",
-      demo: "https://keransanjay88.github.io/chatbot",
-      gradient: "from-purple-500 to-pink-500"
+      title: "Portfolio Auditor",
+      description: "A mutual fund portfolio analysis platform with multi-user access, offering detailed investment analysis, benchmark comparisons, and personalized review meetings.",
+      tech: ["Next.js", "Node.js", "Express.js", "MongoDB"],
+      github: "#",
+      demo: "https://app.portfolioauditor.com",
+      gradient: "from-blue-500 to-purple-500"
+    },
+    {
+      title: "ISDAAR",
+      description: "A digital certification platform enabling secure certificate creation, delivery, and verification with QR-based authentication and comprehensive user management.",
+      tech: ["Next.js", "Node.js", "Express.js", "MongoDB"],
+      github: "#",
+      demo: "https://app.isdaar.io",
+      gradient: "from-green-500 to-blue-500"
+    },
+    {
+      title: "Ciffly",
+      description: "Implemented a fully responsive website redesign, focusing on modern design standards and optimal user experience across all devices.",
+      tech: ["Tailwind CSS", "JavaScript", "Responsive Design"],
+      github: "#",
+      demo: "#",
+      gradient: "from-pink-500 to-purple-500"
+    },
+    {
+      title: "Monday CRM Automation",
+      description: "Developed an automated lead management system integrating business card/LinkedIn profile data capture with personalized email response generation.",
+      tech: ["Monday.com", "Zapier", "Automation", "CRM"],
+      github: "#",
+      demo: "#",
+      gradient: "from-orange-500 to-red-500"
     },
     {
       title: "TODO App",
@@ -28,14 +52,6 @@ const ProjectsSection = () => {
       github: "#",
       demo: "#",
       gradient: "from-green-500 to-teal-500"
-    },
-    {
-      title: "Hotstar Clone",
-      description: "A responsive streaming platform clone built during Microsoft Student Ambassador bootcamp, featuring modern UI design.",
-      tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-      github: "#",
-      demo: "#",
-      gradient: "from-orange-500 to-red-500"
     }
   ]
 
@@ -59,7 +75,7 @@ const ProjectsSection = () => {
           className="min-h-[400px]"
         >
           {works.length > 0 ? (
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {works.map((project, index) => (
                 <motion.div
                   key={index}
