@@ -81,10 +81,10 @@ const ProjectsSection = () => {
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
-                  whileHover={{ y: -10 }}
+                  transition={{ delay: index * 0.15, duration: 0.3 }}
+                  whileHover={{ y: -10, transition: { duration: 0.15 } }}
 
-                  className="group bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
+                  className="group bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-150 cursor-pointer"
                   onClick={() => window.open(`/projects/${encodeURIComponent(project.title.toLowerCase().replace(/\s+/g, '-'))}`, '_self')}
                 >
                   <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
