@@ -24,20 +24,7 @@ export default function IsdaarPage() {
                     </ul>
                 </section>
 
-                {/* Video Demo */}
-                <section className="mb-10">
-                    <h2 className="text-2xl font-semibold mb-3 text-pink-400">Live Demo</h2>
-                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                        <a
-                            href="https://app.isdaar.io"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-pink-400 hover:text-pink-300 transition-colors"
-                        >
-                            Visit ISDAAR →
-                        </a>
-                    </div>
-                </section>
+
 
                 {/* Client Feedback */}
                 <section className="mb-10">

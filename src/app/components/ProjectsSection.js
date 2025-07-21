@@ -9,49 +9,37 @@ const ProjectsSection = () => {
       title: "Portfolio Auditor",
       description: "A mutual fund portfolio analysis platform with multi-user access, offering detailed investment analysis, benchmark comparisons, and personalized review meetings.",
       tech: ["Next.js", "Node.js", "Express.js", "MongoDB"],
-      github: "#",
-      demo: "https://app.portfolioauditor.com",
       gradient: "from-blue-500 to-purple-500"
     },
     {
       title: "ISDAAR",
       description: "A digital certification platform enabling secure certificate creation, delivery, and verification with QR-based authentication and comprehensive user management.",
       tech: ["Next.js", "Node.js", "Express.js", "MongoDB"],
-      github: "#",
-      demo: "https://app.isdaar.io",
       gradient: "from-green-500 to-blue-500"
     },
     {
       title: "Ciffly",
       description: "Implemented a fully responsive website redesign, focusing on modern design standards and optimal user experience across all devices.",
       tech: ["Tailwind CSS", "JavaScript", "Responsive Design"],
-      github: "#",
-      demo: "#",
       gradient: "from-pink-500 to-purple-500"
     },
     {
       title: "Monday CRM Automation",
       description: "Developed an automated lead management system integrating business card/LinkedIn profile data capture with personalized email response generation.",
       tech: ["Monday.com", "Zapier", "Automation", "CRM"],
-      github: "#",
-      demo: "#",
       gradient: "from-orange-500 to-red-500"
-    },
-    {
-      title: "TODO App",
-      description: "A Flutter-based task management app with Hive local storage and GitHub Actions for automated APK releases.",
-      tech: ["Flutter", "Hive", "GitHub Actions", "Dart"],
-      github: "https://github.com/keransanjay88/todo_flutter",
-      demo: "https://github.com/keransanjay88/todo_flutter/releases",
-      gradient: "from-blue-500 to-cyan-500"
     },
     {
       title: "Sleep Quality Prediction",
       description: "Machine learning model using Support Vector Machine (SVM) to predict sleep quality in osteoporosis patients for personalized healthcare.",
       tech: ["Python", "Machine Learning", "SVM", "Data Analysis"],
-      github: "#",
-      demo: "#",
       gradient: "from-green-500 to-teal-500"
+    },
+    {
+      title: "Chatbot",
+      description: "A Voice-Enabled Chatbot using AI, providing interactive voice assistance with natural language processing.",
+      tech: ["AI", "Speech Recognition", "Natural Language Processing", "JavaScript"],
+      gradient: "from-blue-500 to-cyan-500"
     }
   ]
 

@@ -24,27 +24,17 @@ export default function SleepQualityPredictionPage() {
           </ul>
         </section>
 
-        {/* Video Demo */}
+        {/* Key Features */}
         <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-3 text-pink-400">Video Demo</h2>
-          <div className="aspect-w-16 aspect-h-9 w-full max-w-2xl mb-2">
-            {/* Replace the src with your actual video demo link */}
-            <iframe
-              src="https://www.youtube.com/embed/"
-              title="Sleep Quality Prediction Demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-64 rounded-lg border border-white/10"
-            ></iframe>
-          </div>
-        </section>
-
-        {/* Client Feedback */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-3 text-pink-400">Client Feedback</h2>
+          <h2 className="text-2xl font-semibold mb-3 text-pink-400">Key Features</h2>
           <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-white/90">
-            <p className="italic">&quot;The prediction tool helped us identify at-risk patients and improve our care plans. Highly recommended!&quot;</p>
-            <p className="mt-2 text-right text-white/60">- Client Name</p>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Advanced data preprocessing and feature engineering</li>
+              <li>SVM-based machine learning model implementation</li>
+              <li>Accurate sleep quality prediction system</li>
+              <li>Personalized healthcare recommendations</li>
+              <li>Comprehensive data analysis and visualization</li>
+            </ul>
           </div>
         </section>
       </div>

@@ -23,15 +23,6 @@ export default function CifflyPage() {
                     </ul>
                 </section>
 
-                {/* Design Approach */}
-                <section className="mb-10">
-                    <h2 className="text-2xl font-semibold mb-3 text-pink-400">Design Approach</h2>
-                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                        <p className="text-white/90">
-                            Focused on creating a seamless user experience across all devices while maintaining brand consistency and improving overall accessibility.
-                        </p>
-                    </div>
-                </section>
 
                 {/* Key Features */}
                 <section className="mb-10">

@@ -9,7 +9,7 @@ const Navigation = ({ activeSection }) => {
   const navItems = [
     { key: 'home', label: 'Home' },
     { key: 'about', label: 'Skills' }, // Updated from 'About' to 'Skills'
-    { key: 'projects', label: 'Projects' },
+    { key: 'projects', label: 'Works' },
     { key: 'testimonials', label: 'Testimonials' },
     { key: 'contact', label: 'Contact' }
   ]
@@ -38,7 +38,7 @@ const Navigation = ({ activeSection }) => {
               {/* Show Keran Sanjay on all screen sizes */}
               <span>Keran Sanjay</span>
             </motion.div>
-            
+
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               {navItems.map((item) => (
@@ -47,11 +47,10 @@ const Navigation = ({ activeSection }) => {
                   href={`#${item.key}`}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`transition-colors duration-300 ${
-                    activeSection === item.key
+                  className={`transition-colors duration-300 ${activeSection === item.key
                       ? 'text-white font-bold'
                       : 'text-white/70 hover:text-white'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </motion.a>
@@ -64,25 +63,25 @@ const Navigation = ({ activeSection }) => {
               className="md:hidden text-white flex-shrink-0 p-2 -mr-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <svg 
-                className="w-6 h-6" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 {isMenuOpen ? (
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M6 18L18 6M6 6l12 12" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
                   />
                 ) : (
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M4 6h16M4 12h16M4 18h16" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
                   />
                 )}
               </svg>
@@ -103,11 +102,10 @@ const Navigation = ({ activeSection }) => {
                     key={item.key}
                     href={`#${item.key}`}
                     whileHover={{ x: 10 }}
-                    className={`block py-3 px-4 text-white/70 hover:text-white transition-colors duration-300 ${
-                      activeSection === item.key
+                    className={`block py-3 px-4 text-white/70 hover:text-white transition-colors duration-300 ${activeSection === item.key
                         ? 'text-white font-bold bg-white/10 rounded-lg mx-2'
                         : ''
-                    }`}
+                      }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}

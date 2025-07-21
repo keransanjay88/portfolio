@@ -24,15 +24,6 @@ export default function MondayCrmAutomationPage() {
                     </ul>
                 </section>
 
-                {/* Workflow */}
-                <section className="mb-10">
-                    <h2 className="text-2xl font-semibold mb-3 text-pink-400">Workflow Process</h2>
-                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                        <p className="text-white/90">
-                            Automated system that captures lead details from business cards or LinkedIn profiles, organizes them efficiently, and generates personalized email responses.
-                        </p>
-                    </div>
-                </section>
 
                 {/* Key Features */}
                 <section className="mb-10">
